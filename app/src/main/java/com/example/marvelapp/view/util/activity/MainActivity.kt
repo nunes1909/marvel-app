@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.activity
+package com.example.marvelapp.view.util.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

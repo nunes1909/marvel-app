@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listaCharacterFragment">
+
+    <fragment
+        android:id="@+id/listaCharacterFragment"
+        android:name="com.example.marvelapp.view.ui.lista.ListaCharacterFragment"
+        android:label="ListaCharacterFragment" >
+        <action
+            android:id="@+id/action_listaCharacterFragment_to_detalhesCharacterFragment"
+            app:destination="@id/detalhesCharacterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalhesCharacterFragment"
+        android:name="com.example.marvelapp.view.ui.detalhes.DetalhesCharacterFragment"
+        android:label="DetalhesCharacterFragment" >
+        <argument
+            android:name="character"
+            app:argType="com.example.marvelapp.data.model.character.Character" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritosCharacterFragment"
+        android:name="com.example.marvelapp.view.ui.favoritos.FavoritosCharacterFragment"
+        android:label="FavoritosCharacterFragment" >
+        <action
+            android:id="@+id/action_favoritosCharacterFragment_to_detalhesCharacterFragment"
+            app:destination="@id/detalhesCharacterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pesquisaCharacterFragment"
+        android:name="com.example.marvelapp.view.ui.pesquisa.PesquisaCharacterFragment"
+        android:label="PesquisaCharacterFragment" >
+        <action
+            android:id="@+id/action_pesquisaCharacterFragment_to_detalhesCharacterFragment"
+            app:destination="@id/detalhesCharacterFragment" />
+    </fragment>
+</navigation>
