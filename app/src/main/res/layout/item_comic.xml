@@ -18,14 +18,14 @@
             android:layout_height="200dp"
             android:contentDescription="@string/app_name"
             android:scaleType="centerCrop"
-            app:layout_constraintEnd_toStartOf="@+id/itemComicNome"
+            app:layout_constraintEnd_toStartOf="@+id/itemComicTitulo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.55"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
         <TextView
-            android:id="@+id/itemComicNome"
+            android:id="@+id/itemComicTitulo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -46,9 +46,9 @@
             android:layout_marginTop="12dp"
             android:textColor="@color/colorDefaultText"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/itemComicNome"
-            app:layout_constraintStart_toStartOf="@id/itemComicNome"
-            app:layout_constraintTop_toBottomOf="@id/itemComicNome"
+            app:layout_constraintEnd_toEndOf="@+id/itemComicTitulo"
+            app:layout_constraintStart_toStartOf="@id/itemComicTitulo"
+            app:layout_constraintTop_toBottomOf="@id/itemComicTitulo"
             tools:text="Lorem Ipsum has been the industry's
             standard dummy text ever since the 1500s, when
             an unknown printer took a galley of type." />

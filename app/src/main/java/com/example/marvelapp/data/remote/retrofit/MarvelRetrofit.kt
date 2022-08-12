@@ -58,7 +58,7 @@ class MarvelRetrofit {
             .build()
     }
 
-    fun generatorMd5Hash(encrypted: String): String {
+    private fun generatorMd5Hash(encrypted: String): String {
         var pass = encrypted
         var encryptedString: String? = null
         val md5: MessageDigest
