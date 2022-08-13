@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.util.base
+package com.example.marvelapp.util.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

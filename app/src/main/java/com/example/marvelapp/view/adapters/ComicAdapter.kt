@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.marvelapp.data.model.comic.Comic
+import com.example.marvelapp.data.comic.comic.Comic
 import com.example.marvelapp.databinding.ItemComicBinding
 
 class ComicAdapter : RecyclerView.Adapter<ComicAdapter.ComicViewHolder>() {

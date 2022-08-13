@@ -1,4 +1,4 @@
-package com.example.marvelapp.data.model.character
+package com.example.marvelapp.data.character.remote.character
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable

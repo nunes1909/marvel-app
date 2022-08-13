@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.util.constants
+package com.example.marvelapp.util.constants
 
 object Constants {
 

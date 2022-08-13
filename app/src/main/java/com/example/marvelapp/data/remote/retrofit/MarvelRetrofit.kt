@@ -1,12 +1,12 @@
 package com.example.marvelapp.data.remote.retrofit
 
 import com.example.marvelapp.data.remote.service.ServiceApi
-import com.example.marvelapp.view.util.constants.Constants
-import com.example.marvelapp.view.util.constants.Constants.API_KEY
-import com.example.marvelapp.view.util.constants.Constants.HASH
-import com.example.marvelapp.view.util.constants.Constants.PRIVATE_KEY
-import com.example.marvelapp.view.util.constants.Constants.PUBLIC_KEY
-import com.example.marvelapp.view.util.constants.Constants.TS
+import com.example.marvelapp.util.constants.Constants
+import com.example.marvelapp.util.constants.Constants.API_KEY
+import com.example.marvelapp.util.constants.Constants.HASH
+import com.example.marvelapp.util.constants.Constants.PRIVATE_KEY
+import com.example.marvelapp.util.constants.Constants.PUBLIC_KEY
+import com.example.marvelapp.util.constants.Constants.TS
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -58,7 +58,7 @@ class MarvelRetrofit {
             .build()
     }
 
-    private fun generatorMd5Hash(encrypted: String): String {
+    fun generatorMd5Hash(encrypted: String): String {
         var pass = encrypted
         var encryptedString: String? = null
         val md5: MessageDigest

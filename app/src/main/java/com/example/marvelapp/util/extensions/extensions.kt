@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.util.extensions
+package com.example.marvelapp.util.extensions
 
 import android.view.View
 import android.widget.Toast

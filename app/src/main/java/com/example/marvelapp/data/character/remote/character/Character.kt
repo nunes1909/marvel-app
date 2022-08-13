@@ -1,14 +1,14 @@
-package com.example.marvelapp.data.model.comic
+package com.example.marvelapp.data.character.remote.character
 
-import com.example.marvelapp.data.model.thumbnail.Thumbnail
+import com.example.marvelapp.data.thumbnail.Thumbnail
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class Comic(
+data class Character(
     @SerializedName("id")
     val id: Int,
-    @SerializedName("title")
-    val title: String,
+    @SerializedName("name")
+    val name: String,
     @SerializedName("description")
     val description: String,
     @SerializedName("thumbnail")

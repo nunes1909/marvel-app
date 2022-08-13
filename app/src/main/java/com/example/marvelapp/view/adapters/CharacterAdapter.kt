@@ -7,21 +7,22 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.marvelapp.R
-import com.example.marvelapp.data.model.character.Character
+import com.example.marvelapp.data.character.remote.character.Character
 import com.example.marvelapp.databinding.ItemCharacterBinding
-import com.example.marvelapp.view.util.extensions.limitDescription
+import com.example.marvelapp.util.extensions.limitDescription
+import com.example.marvelapp.view.character.model.CharacterView
 
 class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
 
     inner class CharacterViewHolder(val binding: ItemCharacterBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    private val differ = object : DiffUtil.ItemCallback<Character>() {
-        override fun areItemsTheSame(oldItem: Character, newItem: Character): Boolean {
+    private val differ = object : DiffUtil.ItemCallback<CharacterView>() {
+        override fun areItemsTheSame(oldItem: CharacterView, newItem: CharacterView): Boolean {
             return oldItem.hashCode() == newItem.hashCode()
         }
 
-        override fun areContentsTheSame(oldItem: Character, newItem: Character): Boolean {
+        override fun areContentsTheSame(oldItem: CharacterView, newItem: CharacterView): Boolean {
             return oldItem.id == newItem.id &&
                     oldItem.name == newItem.name &&
                     oldItem.description == newItem.description &&
@@ -33,7 +34,7 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHold
 
     private val asyncDiffer = AsyncListDiffer(this, differ)
 
-    var characters: List<Character>
+    var characters: List<CharacterView>
         get() = asyncDiffer.currentList
         set(value) = asyncDiffer.submitList(value)
 
@@ -71,9 +72,9 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHold
         }
     }
 
-    private var onItemClickListener: ((Character) -> Unit)? = null
+    private var onItemClickListener: ((CharacterView) -> Unit)? = null
 
-    fun setOnItemClickListener(listener: (Character) -> Unit) {
+    fun setOnItemClickListener(listener: (CharacterView) -> Unit) {
         onItemClickListener = listener
     }
 }
