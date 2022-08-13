@@ -70,7 +70,6 @@ class ListaCharacterFragment :
         rvListaCharacter.apply {
             adapter = characterAdapter
             layoutManager = LinearLayoutManager(requireContext())
-            setHasFixedSize(true)
         }
     }
 

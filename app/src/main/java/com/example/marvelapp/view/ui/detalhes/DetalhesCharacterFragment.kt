@@ -83,7 +83,6 @@ class DetalhesCharacterFragment :
         rvDetalhesCharacter.apply {
             adapter = comicAdapter
             layoutManager = LinearLayoutManager(requireContext())
-            setHasFixedSize(true)
         }
     }
 
