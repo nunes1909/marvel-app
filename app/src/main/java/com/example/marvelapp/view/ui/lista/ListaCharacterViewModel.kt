@@ -45,9 +45,6 @@ class ListaCharacterViewModel(
         return ResourceState.Error(resource.message)
     }
 
-    private fun mapToView(
-        values: List<CharacterDomain>
-    ): List<CharacterView> {
-        return mapper.mapToCachedNonNull(values)
-    }
+    private fun mapToView(values: List<CharacterDomain>) =
+        mapper.mapToCachedNonNull(values)
 }

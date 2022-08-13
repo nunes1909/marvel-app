@@ -9,4 +9,6 @@
     <string name="descricao_padrao">Este personagem não possui descrição.</string>
     <string name="erro_conexao">Erro de conexão com a internet.</string>
     <string name="erro_conversao">Falha na conversão dos dados.</string>
+    <string name="mensagem_favoritar">Personagem salvo com sucesso.</string>
+    <string name="erro_favoritos">Não foi possível buscar os favoritos.</string>
 </resources>

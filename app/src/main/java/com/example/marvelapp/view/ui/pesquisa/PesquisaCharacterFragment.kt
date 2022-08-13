@@ -27,9 +27,7 @@ class PesquisaCharacterFragment :
     BaseFragment<FragmentPesquisaCharacterBinding, PesquisaCharacterViewModel>() {
 
     override val viewModel: PesquisaCharacterViewModel by viewModel()
-    private val characterAdapter by lazy {
-        CharacterAdapter()
-    }
+    private val characterAdapter by lazy { CharacterAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

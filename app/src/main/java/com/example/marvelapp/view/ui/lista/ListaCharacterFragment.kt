@@ -22,9 +22,7 @@ class ListaCharacterFragment :
     BaseFragment<FragmentListaCharacterBinding, ListaCharacterViewModel>() {
 
     override val viewModel: ListaCharacterViewModel by viewModel()
-    private val characterAdapter by lazy {
-        CharacterAdapter()
-    }
+    private val characterAdapter by lazy { CharacterAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

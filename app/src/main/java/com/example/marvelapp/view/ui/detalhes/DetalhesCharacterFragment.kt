@@ -1,9 +1,7 @@
 package com.example.marvelapp.view.ui.detalhes
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,10 +9,7 @@ import coil.load
 import com.example.marvelapp.R
 import com.example.marvelapp.databinding.FragmentDetalhesCharacterBinding
 import com.example.marvelapp.util.base.BaseFragment
-import com.example.marvelapp.util.extensions.hide
-import com.example.marvelapp.util.extensions.limitDescription
-import com.example.marvelapp.util.extensions.show
-import com.example.marvelapp.util.extensions.toast
+import com.example.marvelapp.util.extensions.*
 import com.example.marvelapp.util.state.ResourceState
 import com.example.marvelapp.view.character.model.CharacterView
 import com.example.marvelapp.view.ui.adapters.ComicAdapter
@@ -25,12 +20,10 @@ import timber.log.Timber
 class DetalhesCharacterFragment :
     BaseFragment<FragmentDetalhesCharacterBinding, DetalhesCharacterViewModel>() {
 
-    private val args: DetalhesCharacterFragmentArgs by navArgs()
     private lateinit var characterView: CharacterView
+    private val args: DetalhesCharacterFragmentArgs by navArgs()
     override val viewModel: DetalhesCharacterViewModel by viewModel()
-    private val comicAdapter by lazy {
-        ComicAdapter()
-    }
+    private val comicAdapter by lazy { ComicAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,6 +33,11 @@ class DetalhesCharacterFragment :
         configuraRecyclerView()
         carregaCharacterDetalhes()
         observe()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
     }
 
     private fun observe() = lifecycleScope.launch {
@@ -84,6 +82,21 @@ class DetalhesCharacterFragment :
             adapter = comicAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_fav, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.ic_favoritar -> {
+                viewModel.salvar(characterView)
+                toast(getString(R.string.mensagem_favoritar))
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun getViewBinding(

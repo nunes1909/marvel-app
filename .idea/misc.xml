@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/gabri/AndroidStudioProjects/MarvelApp/app/src/main/res/drawable-anydpi/ic_favoritos.xml" value="0.3845" />
+        <entry key="..\:/Users/gabri/AndroidStudioProjects/MarvelApp/app/src/main/res/drawable-anydpi/ic_favoritos_pop.xml" value="0.273" />
         <entry key="..\:/Users/gabri/AndroidStudioProjects/MarvelApp/app/src/main/res/drawable-anydpi/ic_home.xml" value="0.3845" />
         <entry key="..\:/Users/gabri/AndroidStudioProjects/MarvelApp/app/src/main/res/drawable-anydpi/ic_pesquisar.xml" value="0.3845" />
         <entry key="..\:/Users/gabri/AndroidStudioProjects/MarvelApp/app/src/main/res/layout/activity_main.xml" value="0.30919220055710306" />
@@ -13,6 +14,7 @@
         <entry key="..\:/Users/gabri/AndroidStudioProjects/MarvelApp/app/src/main/res/layout/fragment_pesquisa_character.xml" value="0.30397236614853196" />
         <entry key="..\:/Users/gabri/AndroidStudioProjects/MarvelApp/app/src/main/res/layout/item_character.xml" value="0.33" />
         <entry key="..\:/Users/gabri/AndroidStudioProjects/MarvelApp/app/src/main/res/layout/item_comic.xml" value="0.5" />
+        <entry key="..\:/Users/gabri/AndroidStudioProjects/MarvelApp/app/src/main/res/menu/menu_fav.xml" value="0.5583333333333333" />
         <entry key="..\:/Users/gabri/AndroidStudioProjects/MarvelApp/app/src/main/res/menu/menu_nav.xml" value="0.5583333333333333" />
       </map>
     </option>

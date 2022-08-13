@@ -2,9 +2,12 @@ package com.example.marvelapp.view.ui.detalhes
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.marvelapp.domain.character.usecase.favoritos.SaveFavoritosUseCase
 import com.example.marvelapp.domain.comic.model.ComicDomain
 import com.example.marvelapp.domain.comic.usecase.GetComicUseCase
 import com.example.marvelapp.util.state.ResourceState
+import com.example.marvelapp.view.character.mapper.CharacterViewMapper
+import com.example.marvelapp.view.character.model.CharacterView
 import com.example.marvelapp.view.comic.mapper.ComicViewMapper
 import com.example.marvelapp.view.comic.model.ComicView
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -12,8 +15,10 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class DetalhesCharacterViewModel(
-    private val useCase: GetComicUseCase,
-    private val mapper: ComicViewMapper
+    private val getUseCase: GetComicUseCase,
+    private val saveFavoritosUseCase: SaveFavoritosUseCase,
+    private val mapperComic: ComicViewMapper,
+    private val mapperCharacter: CharacterViewMapper
 ) : ViewModel() {
 
     private val _detalhes = MutableStateFlow<ResourceState<List<ComicView>>>(ResourceState.Load())
@@ -22,7 +27,7 @@ class DetalhesCharacterViewModel(
     fun getDetalhes(characterId: Int) = viewModelScope.launch {
         _detalhes.value = ResourceState.Load()
 
-        val resource = useCase(characterId)
+        val resource = getUseCase(characterId)
         _detalhes.value = validaResource(resource)
     }
 
@@ -37,6 +42,11 @@ class DetalhesCharacterViewModel(
     }
 
     private fun mapToView(value: List<ComicDomain>): List<ComicView> {
-        return mapper.mapToCachedNonNull(value)
+        return mapperComic.mapToCachedNonNull(value)
+    }
+
+    fun salvar(character: CharacterView) = viewModelScope.launch {
+        val characterDomain = mapperCharacter.mapFromCached(character)
+        saveFavoritosUseCase(characterDomain)
     }
 }

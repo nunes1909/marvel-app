@@ -1,6 +1,6 @@
 package com.example.marvelapp.data.api.service
 
-import com.example.marvelapp.data.character.remote.character.CharacterDataResponse
+import com.example.marvelapp.data.character.model.CharacterDataResponse
 import com.example.marvelapp.data.comic.remote.comic.ComicDataResponse
 import retrofit2.Response
 import retrofit2.http.GET

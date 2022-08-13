@@ -1,6 +1,6 @@
-package com.example.marvelapp.data.character.remote.mapper
+package com.example.marvelapp.data.character.mapper
 
-import com.example.marvelapp.data.character.remote.character.Character
+import com.example.marvelapp.data.character.model.Character
 import com.example.marvelapp.domain.character.model.CharacterDomain
 import com.example.marvelapp.util.base.GenericMapper
 

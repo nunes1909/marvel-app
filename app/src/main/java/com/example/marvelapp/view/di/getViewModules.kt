@@ -3,6 +3,7 @@ package com.example.marvelapp.view.di
 import com.example.marvelapp.view.character.mapper.CharacterViewMapper
 import com.example.marvelapp.view.comic.mapper.ComicViewMapper
 import com.example.marvelapp.view.ui.detalhes.DetalhesCharacterViewModel
+import com.example.marvelapp.view.ui.favoritos.FavoritosCharacterViewModel
 import com.example.marvelapp.view.ui.lista.ListaCharacterViewModel
 import com.example.marvelapp.view.ui.pesquisa.PesquisaCharacterFragment
 import com.example.marvelapp.view.ui.pesquisa.PesquisaCharacterViewModel
@@ -26,7 +27,13 @@ val uiModules = module {
 
     viewModel {
         DetalhesCharacterViewModel(
-            get(), get()
+            get(), get(), get(), get()
+        )
+    }
+
+    viewModel {
+        FavoritosCharacterViewModel(
+            get(), get(), get()
         )
     }
 
