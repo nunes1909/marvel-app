@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.adapters
+package com.example.marvelapp.view.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

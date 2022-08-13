@@ -5,7 +5,6 @@ import com.example.marvelapp.data.character.remote.repository.CharacterRepositor
 import com.example.marvelapp.data.remote.retrofit.MarvelRetrofit
 import com.example.marvelapp.data.remote.service.ServiceApi
 import com.example.marvelapp.domain.character.repository.CharacterRepository
-import com.example.marvelapp.util.base.GenericMapper
 import okhttp3.OkHttpClient
 import org.koin.core.module.Module
 import org.koin.dsl.module

@@ -1,13 +1,11 @@
 package com.example.marvelapp.view.ui.lista
 
 import android.os.Bundle
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.marvelapp.databinding.FragmentListaCharacterBinding
 import com.example.marvelapp.util.base.BaseFragment
@@ -15,9 +13,7 @@ import com.example.marvelapp.util.extensions.hide
 import com.example.marvelapp.util.extensions.show
 import com.example.marvelapp.util.extensions.toast
 import com.example.marvelapp.util.state.ResourceState
-import com.example.marvelapp.view.adapters.CharacterAdapter
-import com.example.marvelapp.view.ui.detalhes.DetalhesCharacterFragment
-import kotlinx.coroutines.flow.collect
+import com.example.marvelapp.view.ui.adapters.CharacterAdapter
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
@@ -33,22 +29,22 @@ class ListaCharacterFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         configuraRecyclerView()
-        clickAdapter()
+        configuraClickAdapter()
         observer()
     }
 
     private fun observer() = lifecycleScope.launch {
-        viewModel.list.collect { resources ->
-            when (resources) {
+        viewModel.list.collect { resource ->
+            when (resource) {
                 is ResourceState.Success -> {
-                    resources.data?.let { values ->
+                    resource.data?.let { values ->
                         binding.progressListaCharacter.hide()
                         characterAdapter.characters = values.toList()
                     }
                 }
                 is ResourceState.Error -> {
                     binding.progressListaCharacter.hide()
-                    resources.message?.let { message ->
+                    resource.message?.let { message ->
                         toast(message)
                         Timber.tag("ListaCharacterFragment").e("Erro -> $message")
                     }
@@ -61,7 +57,7 @@ class ListaCharacterFragment :
         }
     }
 
-    private fun clickAdapter() = with(binding) {
+    private fun configuraClickAdapter() = with(binding) {
         characterAdapter.setOnItemClickListener { character ->
             val action = ListaCharacterFragmentDirections
                 .actionListaCharacterFragmentToDetalhesCharacterFragment(character)
@@ -75,12 +71,6 @@ class ListaCharacterFragment :
             adapter = characterAdapter
             layoutManager = LinearLayoutManager(requireContext())
             setHasFixedSize(true)
-            addItemDecoration(
-                DividerItemDecoration(
-                    requireContext(),
-                    DividerItemDecoration.VERTICAL
-                )
-            )
         }
     }
 

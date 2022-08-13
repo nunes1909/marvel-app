@@ -10,4 +10,7 @@ object Constants {
     const val TS = "ts"
     const val HASH = "hash"
 
+    const val PESQUISA_QUERY = "pesquisa_query"
+    const val DEFAULT_QUERY = ""
+
 }

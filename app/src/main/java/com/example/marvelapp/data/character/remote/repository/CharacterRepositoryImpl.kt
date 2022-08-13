@@ -34,7 +34,7 @@ class CharacterRepositoryImpl(
     private fun validaResponse(response: Response<CharacterDataResponse>): ResourceState<List<CharacterDomain>> {
         if (response.isSuccessful) {
             response.body()?.let { values ->
-                val listDomain = mapperData(values)
+                val listDomain = mapToDomain(values)
                 return ResourceState.Success(listDomain)
             }
         }
@@ -42,7 +42,7 @@ class CharacterRepositoryImpl(
 
     }
 
-    private fun mapperData(values: CharacterDataResponse): List<CharacterDomain> {
+    private fun mapToDomain(values: CharacterDataResponse): List<CharacterDomain> {
         val results = values.data.results
         return mapper.mapFromCachedNonNull(results)
     }

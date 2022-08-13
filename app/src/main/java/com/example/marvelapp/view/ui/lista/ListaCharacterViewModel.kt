@@ -24,28 +24,28 @@ class ListaCharacterViewModel(
     }
 
     private fun getCharacter() = viewModelScope.launch {
-        val listDomain = useCase()
-        _list.value = validaResource(listDomain)
+        val resource = useCase()
+        _list.value = validaResource(resource)
     }
 
     /**
-     * Este método valida se o data é diferente de null e retorna
+     * Este método valida se os dados são diferente de null e retorna
      * um resource success do mapper
      *
      * Caso seja null, retorna resource error
      */
     private fun validaResource(
-        resourceDomain: ResourceState<List<CharacterDomain>>
+        resource: ResourceState<List<CharacterDomain>>
     ): ResourceState<List<CharacterView>> {
-        resourceDomain.data?.let { values ->
+        resource.data?.let { values ->
             return ResourceState.Success(
-                mapperView(values)
+                mapToView(values)
             )
         }
-        return ResourceState.Error(resourceDomain.message)
+        return ResourceState.Error(resource.message)
     }
 
-    private fun mapperView(
+    private fun mapToView(
         values: List<CharacterDomain>
     ): List<CharacterView> {
         return mapper.mapToCachedNonNull(values)
