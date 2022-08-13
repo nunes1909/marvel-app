@@ -102,7 +102,7 @@ class PesquisaCharacterFragment :
         super.onSaveInstanceState(outState)
         outState.putString(
             PESQUISA_QUERY,
-            binding.tituloPesquisaCharacter.text.toString().trim()
+            binding.tituloPesquisaCharacter.editableText.toString().trim()
         )
     }
 

@@ -1,6 +1,6 @@
-package com.example.marvelapp.data.remote.retrofit
+package com.example.marvelapp.data.api.retrofit
 
-import com.example.marvelapp.data.remote.service.ServiceApi
+import com.example.marvelapp.data.api.service.ServiceApi
 import com.example.marvelapp.util.constants.Constants
 import com.example.marvelapp.util.constants.Constants.API_KEY
 import com.example.marvelapp.util.constants.Constants.HASH

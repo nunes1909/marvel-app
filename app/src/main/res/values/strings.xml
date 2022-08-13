@@ -5,5 +5,8 @@
     <string name="menu_favoritos">Favoritos</string>
     <string name="menu_pesquisar">Pesquisar</string>
     <string name="menu_home">Home</string>
+
     <string name="descricao_padrao">Este personagem não possui descrição.</string>
+    <string name="erro_conexao">Erro de conexão com a internet.</string>
+    <string name="erro_conversao">Falha na conversão dos dados.</string>
 </resources>

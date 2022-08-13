@@ -1,9 +1,42 @@
 package com.example.marvelapp.view.ui.detalhes
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.marvelapp.domain.comic.model.ComicDomain
+import com.example.marvelapp.domain.comic.usecase.GetComicUseCase
+import com.example.marvelapp.util.state.ResourceState
+import com.example.marvelapp.view.comic.mapper.ComicViewMapper
+import com.example.marvelapp.view.comic.model.ComicView
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 class DetalhesCharacterViewModel(
-
+    private val useCase: GetComicUseCase,
+    private val mapper: ComicViewMapper
 ) : ViewModel() {
 
+    private val _detalhes = MutableStateFlow<ResourceState<List<ComicView>>>(ResourceState.Load())
+    val detalhes: StateFlow<ResourceState<List<ComicView>>> = _detalhes
+
+    fun getDetalhes(characterId: Int) = viewModelScope.launch {
+        _detalhes.value = ResourceState.Load()
+
+        val resource = useCase(characterId)
+        _detalhes.value = validaResource(resource)
+    }
+
+    private fun validaResource(resource: ResourceState<List<ComicDomain>>):
+            ResourceState<List<ComicView>> {
+
+        resource.data?.let { value ->
+            val comicView = mapToView(value)
+            return ResourceState.Success(comicView)
+        }
+        return ResourceState.Error(resource.message)
+    }
+
+    private fun mapToView(value: List<ComicDomain>): List<ComicView> {
+        return mapper.mapToCachedNonNull(value)
+    }
 }

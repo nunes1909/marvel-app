@@ -2,9 +2,12 @@ package com.example.marvelapp.data.di
 
 import com.example.marvelapp.data.character.remote.mapper.CharacterDataMapper
 import com.example.marvelapp.data.character.remote.repository.CharacterRepositoryImpl
-import com.example.marvelapp.data.remote.retrofit.MarvelRetrofit
-import com.example.marvelapp.data.remote.service.ServiceApi
+import com.example.marvelapp.data.api.retrofit.MarvelRetrofit
+import com.example.marvelapp.data.api.service.ServiceApi
+import com.example.marvelapp.data.comic.remote.mapper.ComicDataMapper
+import com.example.marvelapp.data.comic.remote.repository.ComicRepositoryImpl
 import com.example.marvelapp.domain.character.repository.CharacterRepository
+import com.example.marvelapp.domain.comic.repository.ComicRepository
 import okhttp3.OkHttpClient
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -18,8 +21,11 @@ val apiModule = module {
 }
 
 val modules = module {
-    factory<CharacterRepository> { CharacterRepositoryImpl(get(), get()) }
     factory { CharacterDataMapper() }
+    factory { ComicDataMapper() }
+
+    factory<CharacterRepository> { CharacterRepositoryImpl(get(), get(), get()) }
+    factory<ComicRepository> { ComicRepositoryImpl(get(), get(), get()) }
 }
 
 val dataModules = listOf<Module>(

@@ -6,20 +6,21 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.marvelapp.data.comic.comic.Comic
+import com.example.marvelapp.data.comic.remote.comic.Comic
 import com.example.marvelapp.databinding.ItemComicBinding
+import com.example.marvelapp.view.comic.model.ComicView
 
 class ComicAdapter : RecyclerView.Adapter<ComicAdapter.ComicViewHolder>() {
 
     inner class ComicViewHolder(val binding: ItemComicBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    private val differ = object : DiffUtil.ItemCallback<Comic>() {
-        override fun areItemsTheSame(oldItem: Comic, newItem: Comic): Boolean {
+    private val differ = object : DiffUtil.ItemCallback<ComicView>() {
+        override fun areItemsTheSame(oldItem: ComicView, newItem: ComicView): Boolean {
             return oldItem.hashCode() == newItem.hashCode()
         }
 
-        override fun areContentsTheSame(oldItem: Comic, newItem: Comic): Boolean {
+        override fun areContentsTheSame(oldItem: ComicView, newItem: ComicView): Boolean {
             return oldItem.id == newItem.id &&
                     oldItem.title == newItem.title &&
                     oldItem.description == newItem.description &&
@@ -30,7 +31,7 @@ class ComicAdapter : RecyclerView.Adapter<ComicAdapter.ComicViewHolder>() {
 
     private val asyncDiffer = AsyncListDiffer(this, differ)
 
-    var comics: List<Comic>
+    var comics: List<ComicView>
         get() = asyncDiffer.currentList
         set(value) = asyncDiffer.submitList(value)
 

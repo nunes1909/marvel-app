@@ -3,7 +3,7 @@ package com.example.marvelapp.view.ui.lista
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.marvelapp.domain.character.model.CharacterDomain
-import com.example.marvelapp.domain.character.usecase.ListCharacterUseCase
+import com.example.marvelapp.domain.character.usecase.GetCharacterUseCase
 import com.example.marvelapp.util.state.ResourceState
 import com.example.marvelapp.view.character.mapper.CharacterViewMapper
 import com.example.marvelapp.view.character.model.CharacterView
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class ListaCharacterViewModel(
-    private val useCase: ListCharacterUseCase,
+    private val useCase: GetCharacterUseCase,
     private val mapper: CharacterViewMapper
 ) : ViewModel() {
 

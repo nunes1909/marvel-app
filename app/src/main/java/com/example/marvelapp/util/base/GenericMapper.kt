@@ -10,7 +10,7 @@ interface GenericMapper<C, E> {
     }
 
     fun mapFromCachedNonNull(entity: List<C>): List<E> {
-        return entity.map { mapFromCached(it)!! }
+        return entity.map { mapFromCached(it) }
     }
 
     fun mapToCached(domain: List<E?>): List<C?> {

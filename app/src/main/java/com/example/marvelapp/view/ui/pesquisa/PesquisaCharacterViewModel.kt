@@ -3,7 +3,7 @@ package com.example.marvelapp.view.ui.pesquisa
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.marvelapp.domain.character.model.CharacterDomain
-import com.example.marvelapp.domain.character.usecase.ListCharacterUseCase
+import com.example.marvelapp.domain.character.usecase.GetCharacterUseCase
 import com.example.marvelapp.util.state.ResourceState
 import com.example.marvelapp.view.character.mapper.CharacterViewMapper
 import com.example.marvelapp.view.character.model.CharacterView
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class PesquisaCharacterViewModel(
-    private val useCase: ListCharacterUseCase,
+    private val useCase: GetCharacterUseCase,
     private val mapper: CharacterViewMapper
 ) : ViewModel() {
 
@@ -31,9 +31,8 @@ class PesquisaCharacterViewModel(
         resource: ResourceState<List<CharacterDomain>>
     ): ResourceState<List<CharacterView>> {
         resource.data?.let { values ->
-            return ResourceState.Success(
-                mapToView(values)
-            )
+            val characterView = mapToView(values)
+            return ResourceState.Success(characterView)
         }
         return ResourceState.Error(resource.message)
     }

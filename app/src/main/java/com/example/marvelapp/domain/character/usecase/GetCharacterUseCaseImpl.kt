@@ -4,10 +4,10 @@ import com.example.marvelapp.domain.character.model.CharacterDomain
 import com.example.marvelapp.domain.character.repository.CharacterRepository
 import com.example.marvelapp.util.state.ResourceState
 
-class ListCharacterUseCaseImpl(
+class GetCharacterUseCaseImpl(
     private val repository: CharacterRepository
-) : ListCharacterUseCase {
+) : GetCharacterUseCase {
     override suspend fun invoke(nameStartsWith: String?): ResourceState<List<CharacterDomain>> {
-        return repository.listOneOrAll(nameStartsWith)
+        return repository.getCharacter(nameStartsWith)
     }
 }
