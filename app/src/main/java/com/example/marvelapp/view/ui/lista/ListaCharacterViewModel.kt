@@ -2,6 +2,7 @@ package com.example.marvelapp.view.ui.lista
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.marvelapp.domain.character.model.CharacterDomain
 import com.example.marvelapp.domain.character.usecase.ListCharacterUseCase
 import com.example.marvelapp.util.state.ResourceState
 import com.example.marvelapp.view.character.mapper.CharacterViewMapper
@@ -9,7 +10,6 @@ import com.example.marvelapp.view.character.model.CharacterView
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import java.io.IOException
 
 class ListaCharacterViewModel(
     private val useCase: ListCharacterUseCase,
@@ -24,28 +24,30 @@ class ListaCharacterViewModel(
     }
 
     private fun getCharacter() = viewModelScope.launch {
-        safeGet()
+        val listDomain = useCase()
+        _list.value = validaResource(listDomain)
     }
 
-    private suspend fun safeGet() {
-        try {
-            val listCharacters = useCase()
-            listCharacters?.let {
-                val list = mapper.mapToCachedNonNull(it)
-                _list.value = handleList(list)
-            }
-        } catch (t: Throwable) {
-            when (t) {
-                is IOException -> _list.value = ResourceState.Error("Erro de conexão.")
-                else -> _list.value = ResourceState.Error("Falha na conversão de dados.")
-            }
+    /**
+     * Este método valida se o data é diferente de null e retorna
+     * um resource success do mapper
+     *
+     * Caso seja null, retorna resource error
+     */
+    private fun validaResource(
+        resourceDomain: ResourceState<List<CharacterDomain>>
+    ): ResourceState<List<CharacterView>> {
+        resourceDomain.data?.let { values ->
+            return ResourceState.Success(
+                mapperView(values)
+            )
         }
+        return ResourceState.Error(resourceDomain.message)
     }
 
-    private fun handleList(list: List<CharacterView>?): ResourceState<List<CharacterView>> {
-        if (list != null) {
-            return ResourceState.Success(list)
-        }
-        return ResourceState.Error("Um erro ocorreu")
+    private fun mapperView(
+        values: List<CharacterDomain>
+    ): List<CharacterView> {
+        return mapper.mapToCachedNonNull(values)
     }
 }

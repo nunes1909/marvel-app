@@ -20,6 +20,7 @@ import com.example.marvelapp.view.ui.detalhes.DetalhesCharacterFragment
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import timber.log.Timber
 
 class ListaCharacterFragment :
     BaseFragment<FragmentListaCharacterBinding, ListaCharacterViewModel>() {
@@ -47,8 +48,9 @@ class ListaCharacterFragment :
                 }
                 is ResourceState.Error -> {
                     binding.progressListaCharacter.hide()
-                    resources.message?.let {
-                        toast(it)
+                    resources.message?.let { message ->
+                        toast(message)
+                        Timber.tag("ListaCharacterFragment").e("Erro -> $message")
                     }
                 }
                 is ResourceState.Load -> {
