@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelapp.databinding.FragmentFavoritosCharacterBinding
 import com.example.marvelapp.util.base.BaseFragment
 import com.example.marvelapp.util.extensions.hide
@@ -64,6 +66,30 @@ class FavoritosCharacterFragment :
         rvFavoritosCharacter.apply {
             adapter = favoritosAdapter
             layoutManager = LinearLayoutManager(requireContext())
+            ItemTouchHelper(configuraTouchHelper()).attachToRecyclerView(this@apply)
+        }
+    }
+
+    private fun configuraTouchHelper(): ItemTouchHelper.SimpleCallback {
+        return object : ItemTouchHelper.SimpleCallback(
+            0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
+        ) {
+
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ) = false
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val character =
+                    favoritosAdapter.getCharacterPosition(viewHolder.adapterPosition)
+
+                viewModel.delete(character).also {
+                    toast("${character.name} removido com sucesso.")
+                }
+            }
+
         }
     }
 

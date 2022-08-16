@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.marvelapp.R
 import com.example.marvelapp.domain.character.model.CharacterDomain
+import com.example.marvelapp.domain.character.usecase.favoritos.DeleteCharacterUseCase
 import com.example.marvelapp.domain.character.usecase.favoritos.GetFavoritosUseCase
 import com.example.marvelapp.util.state.ResourceState
 import com.example.marvelapp.view.character.mapper.CharacterViewMapper
@@ -16,6 +17,7 @@ import timber.log.Timber
 
 class FavoritosCharacterViewModel(
     private val getFavUseCase: GetFavoritosUseCase,
+    private val deleteFavUseCase: DeleteCharacterUseCase,
     private val mapper: CharacterViewMapper,
     private val context: Context
 ) : ViewModel() {
@@ -47,4 +49,12 @@ class FavoritosCharacterViewModel(
 
     private fun mapToView(values: List<CharacterDomain>) =
         mapper.mapToCachedNonNull(values)
+
+    fun delete(character: CharacterView) = viewModelScope.launch {
+        val characterDomain = mapToDomain(character)
+        deleteFavUseCase(characterDomain)
+    }
+
+    private fun mapToDomain(character: CharacterView): CharacterDomain =
+        mapper.mapFromCached(character)
 }

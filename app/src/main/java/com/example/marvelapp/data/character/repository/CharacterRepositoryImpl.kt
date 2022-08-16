@@ -67,4 +67,9 @@ class CharacterRepositoryImpl(
             )
         }
     }
+
+    override suspend fun delete(characterDomain: CharacterDomain) {
+        val character = mapper.mapToCached(characterDomain)
+        dao.deleta(character)
+    }
 }

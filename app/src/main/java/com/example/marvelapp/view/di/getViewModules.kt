@@ -33,7 +33,7 @@ val uiModules = module {
 
     viewModel {
         FavoritosCharacterViewModel(
-            get(), get(), get()
+            get(), get(), get(), get()
         )
     }
 
