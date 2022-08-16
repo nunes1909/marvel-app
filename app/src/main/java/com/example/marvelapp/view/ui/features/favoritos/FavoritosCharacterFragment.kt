@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.ui.favoritos
+package com.example.marvelapp.view.ui.features.favoritos
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,12 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelapp.databinding.FragmentFavoritosCharacterBinding
 import com.example.marvelapp.util.base.BaseFragment
-import com.example.marvelapp.util.extensions.hide
-import com.example.marvelapp.util.extensions.show
 import com.example.marvelapp.util.extensions.toast
 import com.example.marvelapp.util.state.ResourceState
 import com.example.marvelapp.view.ui.adapters.CharacterAdapter
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
@@ -45,7 +42,7 @@ class FavoritosCharacterFragment :
                 is ResourceState.Error -> {
                     resource.message?.let { message ->
                         toast(message)
-                        Timber.tag("ListaCharacterFragment").e("Erro -> $message")
+                        Timber.tag("FavoritosCharacterFragment").e("Erro -> $message")
                     }
                 }
                 else -> {}
@@ -89,7 +86,6 @@ class FavoritosCharacterFragment :
                     toast("${character.name} removido com sucesso.")
                 }
             }
-
         }
     }
 

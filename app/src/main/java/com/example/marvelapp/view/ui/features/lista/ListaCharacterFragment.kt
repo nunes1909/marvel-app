@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.ui.lista
+package com.example.marvelapp.view.ui.features.lista
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -76,5 +76,4 @@ class ListaCharacterFragment :
         container: ViewGroup?
     ): FragmentListaCharacterBinding =
         FragmentListaCharacterBinding.inflate(inflater, container, false)
-
 }

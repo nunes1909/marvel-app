@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listaCharacterFragment"
-        android:name="com.example.marvelapp.view.ui.lista.ListaCharacterFragment"
+        android:name="com.example.marvelapp.view.ui.features.lista.ListaCharacterFragment"
         android:label="ListaCharacterFragment"
         tools:layout="@layout/fragment_lista_character">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/detalhesCharacterFragment"
-        android:name="com.example.marvelapp.view.ui.detalhes.DetalhesCharacterFragment"
+        android:name="com.example.marvelapp.view.ui.features.detalhes.DetalhesCharacterFragment"
         android:label="DetalhesCharacterFragment"
         tools:layout="@layout/fragment_detalhes_character">
         <argument
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoritosCharacterFragment"
-        android:name="com.example.marvelapp.view.ui.favoritos.FavoritosCharacterFragment"
+        android:name="com.example.marvelapp.view.ui.features.favoritos.FavoritosCharacterFragment"
         android:label="FavoritosCharacterFragment"
         tools:layout="@layout/fragment_favoritos_character">
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/pesquisaCharacterFragment"
-        android:name="com.example.marvelapp.view.ui.pesquisa.PesquisaCharacterFragment"
+        android:name="com.example.marvelapp.view.ui.features.pesquisa.PesquisaCharacterFragment"
         android:label="PesquisaCharacterFragment"
         tools:layout="@layout/fragment_pesquisa_character">
         <action

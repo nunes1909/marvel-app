@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.ui.detalhes
+package com.example.marvelapp.view.ui.features.detalhes
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -24,9 +24,11 @@ class DetalhesCharacterViewModel(
     private val _detalhes = MutableStateFlow<ResourceState<List<ComicView>>>(ResourceState.Load())
     val detalhes: StateFlow<ResourceState<List<ComicView>>> = _detalhes
 
-    fun getDetalhes(characterId: Int) = viewModelScope.launch {
+    init {
         _detalhes.value = ResourceState.Load()
+    }
 
+    fun getDetalhes(characterId: Int) = viewModelScope.launch {
         val resource = getUseCase(characterId)
         _detalhes.value = validaResource(resource)
     }

@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.activity
+package com.example.marvelapp.view
 
 import android.app.Application
 import com.example.marvelapp.data.di.dataModules

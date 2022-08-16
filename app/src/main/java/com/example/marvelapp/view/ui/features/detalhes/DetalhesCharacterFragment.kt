@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.ui.detalhes
+package com.example.marvelapp.view.ui.features.detalhes
 
 import android.os.Bundle
 import android.view.*

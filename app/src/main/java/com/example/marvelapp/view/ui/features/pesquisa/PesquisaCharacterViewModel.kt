@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.ui.lista
+package com.example.marvelapp.view.ui.features.pesquisa
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,40 +11,35 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class ListaCharacterViewModel(
+class PesquisaCharacterViewModel(
     private val useCase: GetCharacterUseCase,
     private val mapper: CharacterViewMapper
 ) : ViewModel() {
 
-    private val _list = MutableStateFlow<ResourceState<List<CharacterView>>>(ResourceState.Load())
-    val list: StateFlow<ResourceState<List<CharacterView>>> = _list
+    private val _pesquisa =
+        MutableStateFlow<ResourceState<List<CharacterView>>>(ResourceState.Empty())
+    val pesquisa: StateFlow<ResourceState<List<CharacterView>>> = _pesquisa
 
     init {
-        getCharacter()
+        _pesquisa.value = ResourceState.Load()
     }
 
-    private fun getCharacter() = viewModelScope.launch {
-        val resource = useCase()
-        _list.value = validaResource(resource)
+    fun getCharacter(nameStartsWith: String) = viewModelScope.launch {
+        val resource = useCase(nameStartsWith)
+        _pesquisa.value = validaResource(resource)
     }
 
-    /**
-     * Este método valida se os dados são diferente de null e retorna
-     * um resource success do mapper
-     *
-     * Caso seja null, retorna resource error
-     */
     private fun validaResource(
         resource: ResourceState<List<CharacterDomain>>
     ): ResourceState<List<CharacterView>> {
         resource.data?.let { values ->
-            return ResourceState.Success(
-                mapToView(values)
-            )
+            val characterView = mapToView(values)
+            return ResourceState.Success(characterView)
         }
         return ResourceState.Error(resource.message)
     }
 
-    private fun mapToView(values: List<CharacterDomain>) =
-        mapper.mapToCachedNonNull(values)
+    private fun mapToView(values: List<CharacterDomain>): List<CharacterView> {
+        return mapper.mapToCachedNonNull(values)
+    }
 }

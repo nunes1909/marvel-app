@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.ui.favoritos
+package com.example.marvelapp.view.ui.features.favoritos
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
@@ -47,14 +47,16 @@ class FavoritosCharacterViewModel(
         }
     }
 
-    private fun mapToView(values: List<CharacterDomain>) =
-        mapper.mapToCachedNonNull(values)
+    private fun mapToView(values: List<CharacterDomain>): List<CharacterView> {
+        return mapper.mapToCachedNonNull(values)
+    }
 
     fun delete(character: CharacterView) = viewModelScope.launch {
         val characterDomain = mapToDomain(character)
         deleteFavUseCase(characterDomain)
     }
 
-    private fun mapToDomain(character: CharacterView): CharacterDomain =
-        mapper.mapFromCached(character)
+    private fun mapToDomain(character: CharacterView): CharacterDomain {
+        return mapper.mapFromCached(character)
+    }
 }

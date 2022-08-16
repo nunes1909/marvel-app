@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.ui.pesquisa
+package com.example.marvelapp.view.ui.features.pesquisa
 
 import android.os.Bundle
 import android.view.KeyEvent
@@ -18,7 +18,6 @@ import com.example.marvelapp.util.extensions.show
 import com.example.marvelapp.util.extensions.toast
 import com.example.marvelapp.util.state.ResourceState
 import com.example.marvelapp.view.ui.adapters.CharacterAdapter
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
@@ -117,7 +116,6 @@ class PesquisaCharacterFragment :
         rvPesquisaCharacter.apply {
             adapter = characterAdapter
             layoutManager = LinearLayoutManager(requireContext())
-            setHasFixedSize(true)
         }
     }
 
