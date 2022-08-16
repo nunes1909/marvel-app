@@ -5,8 +5,8 @@ import com.example.marvelapp.R
 import com.example.marvelapp.data.remote.service.ServiceApi
 import com.example.marvelapp.data.model.comic.model.ComicDataResponse
 import com.example.marvelapp.data.model.comic.mapper.ComicDataMapper
-import com.example.marvelapp.domain.comic.model.ComicDomain
-import com.example.marvelapp.domain.comic.repository.ComicRepository
+import com.example.marvelapp.domain.model.comic.model.ComicDomain
+import com.example.marvelapp.domain.model.comic.repository.ComicRepository
 import com.example.marvelapp.util.state.ResourceState
 import retrofit2.Response
 import java.io.IOException

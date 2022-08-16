@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.marvelapp.R
-import com.example.marvelapp.domain.character.model.CharacterDomain
-import com.example.marvelapp.domain.character.usecase.favoritos.DeleteCharacterUseCase
-import com.example.marvelapp.domain.character.usecase.favoritos.GetFavoritosUseCase
+import com.example.marvelapp.domain.model.character.model.CharacterDomain
+import com.example.marvelapp.domain.model.character.usecase.favoritos.DeleteCharacterUseCase
+import com.example.marvelapp.domain.model.character.usecase.favoritos.GetFavoritosUseCase
 import com.example.marvelapp.util.state.ResourceState
 import com.example.marvelapp.view.character.mapper.CharacterViewMapper
 import com.example.marvelapp.view.character.model.CharacterView

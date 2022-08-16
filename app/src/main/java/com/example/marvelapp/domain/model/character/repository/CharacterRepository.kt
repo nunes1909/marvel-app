@@ -1,6 +1,6 @@
-package com.example.marvelapp.domain.character.repository
+package com.example.marvelapp.domain.model.character.repository
 
-import com.example.marvelapp.domain.character.model.CharacterDomain
+import com.example.marvelapp.domain.model.character.model.CharacterDomain
 import com.example.marvelapp.util.state.ResourceState
 import kotlinx.coroutines.flow.Flow
 

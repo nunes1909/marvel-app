@@ -2,8 +2,8 @@ package com.example.marvelapp.view.ui.pesquisa
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.marvelapp.domain.character.model.CharacterDomain
-import com.example.marvelapp.domain.character.usecase.GetCharacterUseCase
+import com.example.marvelapp.domain.model.character.model.CharacterDomain
+import com.example.marvelapp.domain.model.character.usecase.GetCharacterUseCase
 import com.example.marvelapp.util.state.ResourceState
 import com.example.marvelapp.view.character.mapper.CharacterViewMapper
 import com.example.marvelapp.view.character.model.CharacterView

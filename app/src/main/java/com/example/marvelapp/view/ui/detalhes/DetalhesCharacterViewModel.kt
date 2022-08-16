@@ -2,9 +2,9 @@ package com.example.marvelapp.view.ui.detalhes
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.marvelapp.domain.character.usecase.favoritos.SaveFavoritosUseCase
-import com.example.marvelapp.domain.comic.model.ComicDomain
-import com.example.marvelapp.domain.comic.usecase.GetComicUseCase
+import com.example.marvelapp.domain.model.character.usecase.favoritos.SaveFavoritosUseCase
+import com.example.marvelapp.domain.model.comic.model.ComicDomain
+import com.example.marvelapp.domain.model.comic.usecase.GetComicUseCase
 import com.example.marvelapp.util.state.ResourceState
 import com.example.marvelapp.view.character.mapper.CharacterViewMapper
 import com.example.marvelapp.view.character.model.CharacterView

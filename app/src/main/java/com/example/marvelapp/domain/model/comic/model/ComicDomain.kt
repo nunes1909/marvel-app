@@ -1,4 +1,4 @@
-package com.example.marvelapp.domain.comic.model
+package com.example.marvelapp.domain.model.comic.model
 
 import com.example.marvelapp.data.model.thumbnail.Thumbnail
 import java.io.Serializable
@@ -9,3 +9,4 @@ data class ComicDomain(
     val description: String? = null,
     val thumbnail: Thumbnail
 ) : Serializable
+

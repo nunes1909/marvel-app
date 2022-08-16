@@ -6,8 +6,8 @@ import com.example.marvelapp.data.remote.service.ServiceApi
 import com.example.marvelapp.data.local.dao.MarvelDao
 import com.example.marvelapp.data.model.character.model.CharacterDataResponse
 import com.example.marvelapp.data.model.character.mapper.CharacterDataMapper
-import com.example.marvelapp.domain.character.model.CharacterDomain
-import com.example.marvelapp.domain.character.repository.CharacterRepository
+import com.example.marvelapp.domain.model.character.model.CharacterDomain
+import com.example.marvelapp.domain.model.character.repository.CharacterRepository
 import com.example.marvelapp.util.state.ResourceState
 import kotlinx.coroutines.flow.flow
 import retrofit2.Response

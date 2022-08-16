@@ -1,6 +1,6 @@
-package com.example.marvelapp.domain.comic.repository
+package com.example.marvelapp.domain.model.comic.repository
 
-import com.example.marvelapp.domain.comic.model.ComicDomain
+import com.example.marvelapp.domain.model.comic.model.ComicDomain
 import com.example.marvelapp.util.state.ResourceState
 
 interface ComicRepository {

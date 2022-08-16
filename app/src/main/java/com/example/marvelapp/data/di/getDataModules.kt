@@ -7,8 +7,8 @@ import com.example.marvelapp.data.model.character.mapper.CharacterDataMapper
 import com.example.marvelapp.data.model.character.repository.CharacterRepositoryImpl
 import com.example.marvelapp.data.model.comic.mapper.ComicDataMapper
 import com.example.marvelapp.data.model.comic.repository.ComicRepositoryImpl
-import com.example.marvelapp.domain.character.repository.CharacterRepository
-import com.example.marvelapp.domain.comic.repository.ComicRepository
+import com.example.marvelapp.domain.model.character.repository.CharacterRepository
+import com.example.marvelapp.domain.model.comic.repository.ComicRepository
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.Module

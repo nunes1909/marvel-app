@@ -1,6 +1,6 @@
 package com.example.marvelapp.view.comic.mapper
 
-import com.example.marvelapp.domain.comic.model.ComicDomain
+import com.example.marvelapp.domain.model.comic.model.ComicDomain
 import com.example.marvelapp.util.base.GenericMapper
 import com.example.marvelapp.view.comic.model.ComicView
 

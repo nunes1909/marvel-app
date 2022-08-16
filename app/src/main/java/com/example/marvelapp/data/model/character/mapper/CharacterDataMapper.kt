@@ -1,7 +1,7 @@
 package com.example.marvelapp.data.model.character.mapper
 
 import com.example.marvelapp.data.model.character.model.Character
-import com.example.marvelapp.domain.character.model.CharacterDomain
+import com.example.marvelapp.domain.model.character.model.CharacterDomain
 import com.example.marvelapp.util.base.GenericMapper
 
 class CharacterDataMapper : GenericMapper<Character, CharacterDomain> {

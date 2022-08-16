@@ -1,7 +1,7 @@
-package com.example.marvelapp.domain.comic.usecase
+package com.example.marvelapp.domain.model.comic.usecase
 
-import com.example.marvelapp.domain.comic.model.ComicDomain
-import com.example.marvelapp.domain.comic.repository.ComicRepository
+import com.example.marvelapp.domain.model.comic.model.ComicDomain
+import com.example.marvelapp.domain.model.comic.repository.ComicRepository
 import com.example.marvelapp.util.state.ResourceState
 
 class GetComicUseCaseImpl(

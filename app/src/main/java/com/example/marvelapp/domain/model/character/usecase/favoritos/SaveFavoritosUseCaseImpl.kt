@@ -1,7 +1,7 @@
-package com.example.marvelapp.domain.character.usecase.favoritos
+package com.example.marvelapp.domain.model.character.usecase.favoritos
 
-import com.example.marvelapp.domain.character.model.CharacterDomain
-import com.example.marvelapp.domain.character.repository.CharacterRepository
+import com.example.marvelapp.domain.model.character.model.CharacterDomain
+import com.example.marvelapp.domain.model.character.repository.CharacterRepository
 
 class SaveFavoritosUseCaseImpl(
     private val repository: CharacterRepository
