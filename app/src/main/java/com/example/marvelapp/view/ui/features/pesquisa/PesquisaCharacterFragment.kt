@@ -27,15 +27,49 @@ class PesquisaCharacterFragment :
 
     override val viewModel: PesquisaCharacterViewModel by viewModel()
     private val characterAdapter by lazy { CharacterAdapter() }
+    private var valor: String = ""
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         configuraRecyclerView()
         configuraClickAdapter()
-
-        val query = savedInstanceState?.getString(PESQUISA_QUERY) ?: DEFAULT_QUERY
-        configuraPesquisa(query)
+        configuraPesquisa(valor)
         observer()
+    }
+
+    private fun configuraPesquisa(query: String) = with(binding) {
+        tituloPesquisaCharacter.setText(query)
+
+        tituloPesquisaCharacter.setOnEditorActionListener { _, actionId, _ ->
+            val clicouGo = actionId == EditorInfo.IME_ACTION_GO
+
+            if (clicouGo) {
+                pesquisaCharacter()
+                valor = tituloPesquisaCharacter.text?.trim().toString()
+                true
+            } else {
+                false
+            }
+        }
+
+        tituloPesquisaCharacter.setOnKeyListener { _, code, event ->
+            val clicouEnter = event.action == KeyEvent.ACTION_DOWN &&
+                    code == KeyEvent.KEYCODE_ENTER
+
+            if (clicouEnter) {
+                pesquisaCharacter()
+                valor = tituloPesquisaCharacter.text?.trim().toString()
+                true
+            } else {
+                false
+            }
+        }
+    }
+
+    private fun pesquisaCharacter() = with(binding) {
+        tituloPesquisaCharacter.text.toString().trim().let {
+            viewModel.getCharacter(it)
+        }
     }
 
     private fun observer() = lifecycleScope.launch {
@@ -60,47 +94,6 @@ class PesquisaCharacterFragment :
                 else -> {}
             }
         }
-    }
-
-    private fun configuraPesquisa(query: String) = with(binding) {
-        tituloPesquisaCharacter.setText(query)
-
-        tituloPesquisaCharacter.setOnEditorActionListener { _, actionId, _ ->
-            val clicouGo = actionId == EditorInfo.IME_ACTION_GO
-
-            if (clicouGo) {
-                pesquisaCharacter()
-                true
-            } else {
-                false
-            }
-        }
-
-        tituloPesquisaCharacter.setOnKeyListener { _, code, event ->
-            val clicouEnter = event.action == KeyEvent.ACTION_DOWN &&
-                    code == KeyEvent.KEYCODE_ENTER
-
-            if (clicouEnter) {
-                pesquisaCharacter()
-                true
-            } else {
-                false
-            }
-        }
-    }
-
-    private fun pesquisaCharacter() = with(binding) {
-        tituloPesquisaCharacter.text.toString().trim().let {
-            viewModel.getCharacter(it)
-        }
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putString(
-            PESQUISA_QUERY,
-            binding.tituloPesquisaCharacter.editableText.toString().trim()
-        )
     }
 
     private fun configuraClickAdapter() = with(binding) {
