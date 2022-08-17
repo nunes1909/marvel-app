@@ -8,11 +8,4 @@
         android:title="Favoritar"
         app:showAsAction="ifRoom" />
 
-    <item
-        android:id="@+id/ic_favoritar_pop"
-        android:icon="@drawable/ic_favoritos_pop"
-        android:title="Favoritar"
-        android:visible="false"
-        app:showAsAction="ifRoom" />
-
 </menu>

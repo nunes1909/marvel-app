@@ -20,10 +20,6 @@ class PesquisaCharacterViewModel(
         MutableStateFlow<ResourceState<List<CharacterView>>>(ResourceState.Empty())
     val pesquisa: StateFlow<ResourceState<List<CharacterView>>> = _pesquisa
 
-    init {
-        _pesquisa.value = ResourceState.Load()
-    }
-
     fun getCharacter(nameStartsWith: String) = viewModelScope.launch {
         val resource = useCase(nameStartsWith)
         _pesquisa.value = validaResource(resource)

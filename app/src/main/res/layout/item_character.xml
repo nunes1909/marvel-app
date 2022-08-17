@@ -10,7 +10,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorDefaultBackg">
 
         <ImageView
             android:id="@+id/itemCharacterImage"
@@ -21,34 +22,38 @@
             app:layout_constraintEnd_toStartOf="@+id/itemCharacterNome"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.65"
+            app:layout_constraintWidth_percent="0.5"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
         <TextView
             android:id="@+id/itemCharacterNome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"
             android:layout_marginEnd="8dp"
             android:textColor="@color/colorDefaultText"
             android:textSize="18sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/itemCharacterDescricao"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/itemCharacterImage"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread"
             tools:text="Nome" />
 
         <TextView
             android:id="@+id/itemCharacterDescricao"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
             android:textColor="@color/colorDefaultText"
             android:textSize="14sp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/itemCharacterNome"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@id/itemCharacterNome"
-            app:layout_constraintTop_toBottomOf="@id/itemCharacterNome"
+            app:layout_constraintTop_toBottomOf="@+id/itemCharacterNome"
             tools:text="Lorem Ipsum has been the industry's
             standard dummy text ever since the 1500s, when
             an unknown printer took a galley of type." />

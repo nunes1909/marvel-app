@@ -8,16 +8,16 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="colorPrimary">#862121</color>
-    <color name="colorPrimaryVariant">#AF4640</color>
-    <color name="colorOnPrimary">#D96A61</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryVariant">#212121</color>
+    <color name="colorOnPrimary">#333333</color>
 
-    <color name="colorSecondary">#FF9084</color>
-    <color name="colorSecondaryVariant">#FFB6A8</color>
-    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorSecondary">#3c3c3c</color>
+    <color name="colorSecondaryVariant">#E0E0E0</color>
+    <color name="colorOnSecondary">#a6a6a6</color>
 
-    <color name="colorImageBackg">#E0E0E0</color>
+    <color name="colorDefaultBackg">#E0E0E0</color>
 
     <color name="colorDefaultText">#FF000000</color>
-    <color name="colorDefaultProgress">#E0E0E0</color>
+    <color name="colorDefaultProgress">#000000</color>
 </resources>
