@@ -1,7 +1,6 @@
 package com.example.marvelapp.util.constants
 
 object Constants {
-
     const val DATA_BASE_NAME = "marvel.db"
     const val BASE_URL = "http://gateway.marvel.com/v1/public/"
 

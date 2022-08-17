@@ -48,7 +48,7 @@ class FavoritosCharacterViewModel(
     }
 
     private fun mapToView(values: List<CharacterDomain>): List<CharacterView> {
-        return mapper.mapToCachedNonNull(values)
+        return mapper.mapToDomainNonNull(values)
     }
 
     fun delete(character: CharacterView) = viewModelScope.launch {
@@ -57,6 +57,6 @@ class FavoritosCharacterViewModel(
     }
 
     private fun mapToDomain(character: CharacterView): CharacterDomain {
-        return mapper.mapFromCached(character)
+        return mapper.mapToDomain(character)
     }
 }

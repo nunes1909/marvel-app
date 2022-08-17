@@ -51,24 +51,24 @@ class CharacterRepositoryImpl(
 
     private fun mapToDomain(values: CharacterDataResponse): List<CharacterDomain> {
         val results = values.data.results
-        return mapper.mapFromCachedNonNull(results)
+        return mapper.mapFromDomainNonNull(results)
     }
 
     override suspend fun salvaFavorito(characterDomain: CharacterDomain) {
-        val character = mapper.mapToCached(characterDomain)
+        val character = mapper.mapFromDomain(characterDomain)
         dao.salva(character)
     }
 
     override suspend fun buscaFavoritos() = flow {
         dao.getAll().collect{ values ->
             emit(
-                mapper.mapFromCachedNonNull(values)
+                mapper.mapFromDomainNonNull(values)
             )
         }
     }
 
     override suspend fun delete(characterDomain: CharacterDomain) {
-        val character = mapper.mapToCached(characterDomain)
+        val character = mapper.mapFromDomain(characterDomain)
         dao.deleta(character)
     }
 }

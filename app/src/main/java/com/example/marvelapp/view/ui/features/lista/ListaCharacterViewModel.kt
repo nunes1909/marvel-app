@@ -40,6 +40,6 @@ class ListaCharacterViewModel(
     }
 
     private fun mapToView(values: List<CharacterDomain>): List<CharacterView> {
-        return mapper.mapToCachedNonNull(values)
+        return mapper.mapToDomainNonNull(values)
     }
 }

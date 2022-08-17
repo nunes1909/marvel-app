@@ -44,11 +44,11 @@ class DetalhesCharacterViewModel(
     }
 
     private fun mapToView(value: List<ComicDomain>): List<ComicView> {
-        return mapperComic.mapToCachedNonNull(value)
+        return mapperComic.mapToDomainNonNull(value)
     }
 
     fun salvar(character: CharacterView) = viewModelScope.launch {
-        val characterDomain = mapperCharacter.mapFromCached(character)
+        val characterDomain = mapperCharacter.mapToDomain(character)
         saveFavoritosUseCase(characterDomain)
     }
 }

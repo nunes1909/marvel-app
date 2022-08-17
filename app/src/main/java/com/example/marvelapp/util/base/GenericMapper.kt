@@ -1,23 +1,24 @@
 package com.example.marvelapp.util.base
 
-interface GenericMapper<C, E> {
-    fun mapFromCached(type: C): E
+interface GenericMapper<A, D> {
 
-    fun mapToCached(type: E): C
+    fun mapToDomain(type: A): D
 
-    fun mapFromCached(entity: List<C?>): List<E?> {
-        return entity.map { if (it == null) null else mapFromCached(it) }
+    fun mapFromDomain(type: D): A
+
+    fun mapToDomain(entity: List<A?>): List<D?> {
+        return entity.map { if (it == null) null else mapToDomain(it) }
     }
 
-    fun mapFromCachedNonNull(entity: List<C>): List<E> {
-        return entity.map { mapFromCached(it) }
+    fun mapFromDomainNonNull(entity: List<A>): List<D> {
+        return entity.map { mapToDomain(it) }
     }
 
-    fun mapToCached(domain: List<E?>): List<C?> {
-        return domain.map { if (it == null) null else mapToCached(it) }
+    fun mapFromDomain(domain: List<D?>): List<A?> {
+        return domain.map { if (it == null) null else mapFromDomain(it) }
     }
 
-    fun mapToCachedNonNull(domain: List<E>): List<C> {
-        return domain.map { mapToCached(it)!! }
+    fun mapToDomainNonNull(domain: List<D>): List<A> {
+        return domain.map { mapFromDomain(it)!! }
     }
 }

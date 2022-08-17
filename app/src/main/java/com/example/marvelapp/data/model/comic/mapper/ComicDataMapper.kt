@@ -6,7 +6,7 @@ import com.example.marvelapp.util.base.GenericMapper
 
 class ComicDataMapper : GenericMapper<Comic, ComicDomain> {
 
-    override fun mapFromCached(type: Comic): ComicDomain {
+    override fun mapToDomain(type: Comic): ComicDomain {
         return ComicDomain(
             type.id,
             type.title,
@@ -15,7 +15,7 @@ class ComicDataMapper : GenericMapper<Comic, ComicDomain> {
         )
     }
 
-    override fun mapToCached(type: ComicDomain): Comic {
+    override fun mapFromDomain(type: ComicDomain): Comic {
         return Comic(
             type.id,
             type.title,

@@ -46,6 +46,6 @@ class ComicRepositoryImpl(
 
     private fun mapToDomain(value: ComicDataResponse): List<ComicDomain> {
         val results = value.data.results
-        return mapper.mapFromCachedNonNull(results)
+        return mapper.mapFromDomainNonNull(results)
     }
 }
