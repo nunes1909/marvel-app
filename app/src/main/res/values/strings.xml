@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MarvelApp</string>
+    <string name="app_name">Marvel App</string>
     <string name="pesquisar_personagem">Pesquise um personagem</string>
     <string name="sem_favoritos">Sem favoritos.</string>
     <string name="menu_favoritos">Favoritos</string>
