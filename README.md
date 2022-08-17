@@ -1,5 +1,7 @@
 # Marvel App
-![marvel](https://user-images.githubusercontent.com/80295127/185027406-5e7faf39-0e41-426e-9397-a4bf1fd85062.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/80295127/185027406-5e7faf39-0e41-426e-9397-a4bf1fd85062.gif">
+</p>
 
 ## Sobre este projeto:
 
