@@ -6,10 +6,10 @@ import com.example.marvelapp.domain.model.character.usecase.favoritos.SaveFavori
 import com.example.marvelapp.domain.model.comic.model.ComicDomain
 import com.example.marvelapp.domain.model.comic.usecase.GetComicUseCase
 import com.example.marvelapp.util.state.ResourceState
-import com.example.marvelapp.view.character.mapper.CharacterViewMapper
-import com.example.marvelapp.view.character.model.CharacterView
-import com.example.marvelapp.view.comic.mapper.ComicViewMapper
-import com.example.marvelapp.view.comic.model.ComicView
+import com.example.marvelapp.view.model.character.mapper.CharacterViewMapper
+import com.example.marvelapp.view.model.character.model.CharacterView
+import com.example.marvelapp.view.model.comic.mapper.ComicViewMapper
+import com.example.marvelapp.view.model.comic.model.ComicView
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

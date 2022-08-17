@@ -1,7 +1,7 @@
 package com.example.marvelapp.view.di
 
-import com.example.marvelapp.view.character.mapper.CharacterViewMapper
-import com.example.marvelapp.view.comic.mapper.ComicViewMapper
+import com.example.marvelapp.view.model.character.mapper.CharacterViewMapper
+import com.example.marvelapp.view.model.comic.mapper.ComicViewMapper
 import com.example.marvelapp.view.ui.features.detalhes.DetalhesCharacterViewModel
 import com.example.marvelapp.view.ui.features.favoritos.FavoritosCharacterViewModel
 import com.example.marvelapp.view.ui.features.lista.ListaCharacterViewModel

@@ -8,8 +8,8 @@ import com.example.marvelapp.domain.model.character.model.CharacterDomain
 import com.example.marvelapp.domain.model.character.usecase.favoritos.DeleteCharacterUseCase
 import com.example.marvelapp.domain.model.character.usecase.favoritos.GetFavoritosUseCase
 import com.example.marvelapp.util.state.ResourceState
-import com.example.marvelapp.view.character.mapper.CharacterViewMapper
-import com.example.marvelapp.view.character.model.CharacterView
+import com.example.marvelapp.view.model.character.mapper.CharacterViewMapper
+import com.example.marvelapp.view.model.character.model.CharacterView
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

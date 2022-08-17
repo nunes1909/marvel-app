@@ -1,4 +1,4 @@
-package com.example.marvelapp.view.character.model
+package com.example.marvelapp.view.model.character.model
 
 import com.example.marvelapp.data.model.thumbnail.Thumbnail
 import java.io.Serializable

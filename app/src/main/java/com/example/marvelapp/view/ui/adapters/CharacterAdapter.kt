@@ -9,7 +9,7 @@ import coil.load
 import com.example.marvelapp.R
 import com.example.marvelapp.databinding.ItemCharacterBinding
 import com.example.marvelapp.util.extensions.limitDescription
-import com.example.marvelapp.view.character.model.CharacterView
+import com.example.marvelapp.view.model.character.model.CharacterView
 
 class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
 

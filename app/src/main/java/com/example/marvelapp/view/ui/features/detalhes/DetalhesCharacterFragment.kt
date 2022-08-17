@@ -9,9 +9,12 @@ import coil.load
 import com.example.marvelapp.R
 import com.example.marvelapp.databinding.FragmentDetalhesCharacterBinding
 import com.example.marvelapp.util.base.BaseFragment
-import com.example.marvelapp.util.extensions.*
+import com.example.marvelapp.util.extensions.hide
+import com.example.marvelapp.util.extensions.limitDescription
+import com.example.marvelapp.util.extensions.show
+import com.example.marvelapp.util.extensions.toast
 import com.example.marvelapp.util.state.ResourceState
-import com.example.marvelapp.view.character.model.CharacterView
+import com.example.marvelapp.view.model.character.model.CharacterView
 import com.example.marvelapp.view.ui.adapters.ComicAdapter
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
