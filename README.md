@@ -18,7 +18,7 @@
 ## Algumas observações sobre o aplicativo:
 
 1. Não existe a funcionalidade de Login e Registro neste projeto, a tela inicial atualmente é a tela da Lista de Personagens.
-2. Não existe a funcionalidade de adaptação ao Dark Mode dos devices.
+2. Não existe adaptação ao Dark Mode dos devices.
 
 ## Funcionalidades:
 
@@ -26,11 +26,12 @@
     - ViewModel, StateFlow, Flow, Coroutines, etc...
 - Utilzação de conceitos de Clean Architecture e MVVM.
 - Consumo da API da <a href="https://developer.marvel.com/">Marvel</a> utilizando Retrofit e OkHttp. 
+- Injeção de Dependência com Koin.
 - Navegação entre as telas com Navigation e Bottom Navigation.
 - Persistência de dados com Room ao salvar os personagens de uma lista de favoritos.
 - RecyclerView com animações de deslizar um item para excluir.
 
 ## Formas de acessar o app:
-1. Clonando o repositório:
+1. Efetuando o download do Apk na release do repositório.
+2. Clonando o repositório:
     - ``` git clone https://github.com/nunes1909/receitas-java.git ```
-3. Efetuando o download do Apk na release do repositório.
