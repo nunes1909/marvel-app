@@ -27,6 +27,7 @@
 - Utilzação de conceitos de Clean Architecture e MVVM.
 - Consumo da API da <a href="https://developer.marvel.com/">Marvel</a> utilizando Retrofit e OkHttp. 
 - Injeção de Dependência com Koin.
+- Processamento de imagens com Coil.
 - Navegação entre as telas com Navigation e Bottom Navigation.
 - Persistência de dados com Room ao salvar os personagens de uma lista de favoritos.
 - RecyclerView com animações de deslizar um item para excluir.
