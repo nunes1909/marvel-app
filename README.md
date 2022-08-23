@@ -33,6 +33,6 @@
 - RecyclerView com animações de deslizar um item para excluir.
 
 ## Formas de acessar o app:
-1. Efetuando o download do Apk na release do repositório.
+1. Download do Apk na <a href="https://github.com/nunes1909/marvel-app/releases/tag/v1.0">release</a> do repositório.
 2. Clonando o repositório:
     - ``` git clone https://github.com/nunes1909/receitas-java.git ```
