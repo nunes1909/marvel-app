@@ -4,35 +4,36 @@
 </p>
 
 ## Sobre este projeto:
-
-
-<p>A ideia deste aplicativo é: </p>
-
-- Consumir a API da Marvel e listar os personagens junto de seus respectivos Comics, e também através do Room salvar os personagens desejados em uma listagem de favoritos.
+A ideia deste aplicativo é:
+- Consumir a <a href="https://developer.marvel.com/">API da Marvel</a> e listar os personagens junto de seus respectivos Comics
+- Implementar um CRUD local dos personagens desejados em uma listagem de favoritos.
 
 ## Motivação:
-<p>Este aplicativo faz parte do meu portifólio pessoal e eu o desenvolvi visando os meus estudos e a prática dos conhecimentos adquiridos. Caso você faça o download deste repositório e observe pontos de melhoria, seja no código, estrutura, UI/UX, etc... Ou queira apenas dar um simples feedback eu ficarei extremamente feliz. Estou aqui para aprender e me tornar um desenvolvedor cada vez melhor. 😁</p>
+Este aplicativo faz parte do meu portfólio pessoal e eu o desenvolvi visando os meus estudos e a prática dos meus conhecimentos. Caso você faça o download deste repositório e observe pontos de melhoria, seja no código, estrutura, UI/UX, etc... Ou queira apenas dar um simples feedback eu ficarei extremamente feliz. Estou aqui para aprender e me tornar um desenvolvedor cada vez melhor. 😁
 
-<p>Você pode entrar em contato comigo através do <a href="https://www.linkedin.com/in/nunes1909/">Linkedin</a> e também através do e-mail: <a href="mailto:gnunes1909@gmail.com">gnunes1909@gmail.com</a></p>
+Você pode entrar em contato comigo através do <a href="https://www.linkedin.com/in/nunes1909/">Linkedin</a> e também através do e-mail: <a href="mailto:gnunes1909@gmail.com">gnunes1909@gmail.com</a>
 
-## Algumas observações sobre o aplicativo:
-
-1. Não existe a funcionalidade de Login e Registro neste projeto, a tela inicial atualmente é a tela da Lista de Personagens.
-2. Não existe adaptação ao Dark Mode dos devices.
+## Observações:
+- Este projeto ainda não da suporte para Crud de usuários e Login/Logout.
+- Este projeto ainda não da suporte para Crud remoto de receitas.
+- Este projeto ainda não da suporte para Dark Theme.
 
 ## Funcionalidades:
+- Feature de Splash Screen.
+- Feature de Characters.
+- Feature de Pesquisa.
+- Feature de Favoritos.
+- Feature de Detalhes.
 
-- Utilização de componentes de Arquitetura Android.
-    - ViewModel, StateFlow, Flow, Coroutines, etc...
+## Componentes:
 - Utilzação de conceitos de Clean Architecture e MVVM.
-- Consumo da API da <a href="https://developer.marvel.com/">Marvel</a> utilizando Retrofit e OkHttp. 
+- Componentes da Arquitetura Android:
+  - ViewModel, Fragments, Lifecycle, Navigation, StateFlow, Room, etc...
 - Injeção de Dependência com Koin.
 - Processamento de imagens com Coil.
-- Navegação entre as telas com Navigation e Bottom Navigation.
-- Persistência de dados com Room ao salvar os personagens de uma lista de favoritos.
-- RecyclerView com animações de deslizar um item para excluir.
 
 ## Formas de acessar o app:
-1. Download do Apk na <a href="https://github.com/nunes1909/marvel-app/releases/tag/v1.0">release</a> do repositório.
-2. Clonando o repositório:
-    - ``` git clone https://github.com/nunes1909/receitas-java.git ```
+- Download do Apk na release do repositório.
+  - <a href="https://github.com/nunes1909/marvel-app/releases/tag/v1.0">Clique aqui</a>.
+- Clonando o repositório:
+  - ``` git clone https://github.com/nunes1909/receitas-java.git ```
