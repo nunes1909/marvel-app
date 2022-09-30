@@ -5,7 +5,7 @@
 
 ## Sobre este projeto:
 A ideia deste aplicativo é:
-- Consumir a <a href="https://developer.marvel.com/">API da Marvel</a> e listar os personagens junto de seus respectivos Comics
+- Consumir a <a href="https://developer.marvel.com/">API da Marvel</a> e listar os personagens junto de seus respectivos Comics.
 - Implementar um CRUD local dos personagens desejados em uma listagem de favoritos.
 
 ## Motivação:
