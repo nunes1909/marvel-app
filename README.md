@@ -38,4 +38,4 @@ Você pode entrar em contato comigo através do <a href="https://www.linkedin.co
 - Download do Apk na release do repositório.
   - <a href="https://github.com/nunes1909/marvel-app/releases/tag/v1.0">Clique aqui</a>.
 - Clonando o repositório:
-  - ``` git clone https://github.com/nunes1909/receitas-java.git ```
+  - ``` git clone https://github.com/nunes1909/marvel-app.git ```
