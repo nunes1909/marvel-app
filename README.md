@@ -15,7 +15,7 @@ Você pode entrar em contato comigo através do <a href="https://www.linkedin.co
 
 ## Observações:
 - Este projeto ainda não da suporte para Crud de usuários e Login/Logout.
-- Este projeto ainda não da suporte para Crud remoto de receitas.
+- Este projeto ainda não da suporte para Crud remoto de personagens.
 - Este projeto ainda não da suporte para Dark Theme.
 
 ## Funcionalidades:
@@ -26,11 +26,13 @@ Você pode entrar em contato comigo através do <a href="https://www.linkedin.co
 - Feature de Detalhes.
 
 ## Componentes:
-- Utilzação de conceitos de Clean Architecture e MVVM.
 - Componentes da Arquitetura Android:
   - ViewModel, Fragments, Lifecycle, Navigation, StateFlow, Room, etc...
 - Injeção de Dependência com Koin.
 - Processamento de imagens com Coil.
+
+## Conceitos:
+- Clean Architecture e MVVM.
 
 ## Formas de acessar o app:
 - Download do Apk na release do repositório.
